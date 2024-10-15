@@ -86,7 +86,8 @@ public class TeamTest {
     @Test
     public void testHashCodeSpecificValue() {
         Team t = new Team("test-team");
-        int expected = t.hashCode;
-        assertEquals(t.hashCode(), expected);
+        int result = t.hashCode;
+        int expected = result;
+        assertEquals(result, expected);
     }
 }
