@@ -33,7 +33,9 @@ public class TeamTest {
 
     @Test
     public void testSameObject() {
-        team = new Team("test-team");
+        Team team = new Team("test-team");
+        team.setName("Snoopy");
+        team.addMember("Charlie");
         assertTrue(team.equals(team));
     }
 
@@ -72,22 +74,12 @@ public class TeamTest {
     }
 
     @Test
-    public void testHashCodeSameContent() {
+    public void testHashCode() {
         Team team = new Team("test-team");
-        Team otherTeam = new Team("test-team");
-        ArrayList<String> members = new ArrayList<>();
-        members.add("Snoopy");
-        team.setMembers(members);
-        otherTeam.setMembers(members);
+        int result = team.hashCode();
+        int expected = -1226298695;
 
-        assertEquals(team.hashCode(), otherTeam.hashCode());
+        assertEquals(expected, result);
     }
 
-    @Test
-    public void testHashCodeSpecificValue() {
-        Team t = new Team("test-team");
-        int result = t.hashCode;
-        int expected = result;
-        assertEquals(result, expected);
-    }
 }
